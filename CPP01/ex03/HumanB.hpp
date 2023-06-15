@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:16:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 18:10:29 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/15 17:48:51 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/15 18:09:52 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define CAPACITY 8
-# include "Contact.hpp"
-# include <iostream>
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
+# include <string>
+# include "Weapon.hpp"
 
-class PhoneBook
+class HumanB
 {
 	private:
-		int	placeIndex;
-		int	nbContacts;
-		Contact contacts[CAPACITY];
+		std::string name;
+		Weapon *weapon;
 	public:
-		PhoneBook();
-		~PhoneBook();
-		void add(std::string *infos);
-		void displayContacts();
-		void displayContact(int i);
-		int getNbContacts();
+		HumanB(std::string name);
+		~HumanB();
+		void attack();
+		void setWeapon(Weapon& weapon);
 };
 
 #endif

@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:16:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 18:10:29 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/15 17:38:01 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/15 18:16:36 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define CAPACITY 8
-# include "Contact.hpp"
-# include <iostream>
+#include <string>
+#include <iostream>
+#include "Weapon.hpp"
+#include "HumanA.hpp"
 
-class PhoneBook
+HumanA::HumanA(std::string name, Weapon& weapon) : name(name), weapon(weapon) {}
+
+HumanA::~HumanA() {}
+
+void HumanA::attack()
 {
-	private:
-		int	placeIndex;
-		int	nbContacts;
-		Contact contacts[CAPACITY];
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void add(std::string *infos);
-		void displayContacts();
-		void displayContact(int i);
-		int getNbContacts();
-};
-
-#endif
+	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+}

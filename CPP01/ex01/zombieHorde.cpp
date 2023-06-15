@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:16:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 18:10:29 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/15 16:01:10 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/15 17:36:36 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define CAPACITY 8
-# include "Contact.hpp"
-# include <iostream>
+#include "Zombie.hpp"
 
-class PhoneBook
+Zombie* zombieHorde(int N, std::string name)
 {
-	private:
-		int	placeIndex;
-		int	nbContacts;
-		Contact contacts[CAPACITY];
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void add(std::string *infos);
-		void displayContacts();
-		void displayContact(int i);
-		int getNbContacts();
-};
+	Zombie *horde = new Zombie[N];
 
-#endif
+	if (!horde)
+		return (nullptr);
+
+	for (int i = 0; i < N; i++)
+		horde[i] = Zombie(name); // Fix deleting zombies previously allocated
+
+	return horde;
+}

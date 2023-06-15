@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:16:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 18:10:29 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/15 16:00:12 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/15 18:19:42 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define CAPACITY 8
-# include "Contact.hpp"
-# include <iostream>
+#include <iostream>
+#include "Zombie.hpp"
 
-class PhoneBook
+Zombie::Zombie() : nom("Inconnu") {}
+
+Zombie::Zombie(std::string nom) : nom(nom) {}
+
+Zombie::~Zombie() {}
+
+void Zombie::announce(void)
 {
-	private:
-		int	placeIndex;
-		int	nbContacts;
-		Contact contacts[CAPACITY];
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void add(std::string *infos);
-		void displayContacts();
-		void displayContact(int i);
-		int getNbContacts();
-};
-
-#endif
+	std::cout << this->nom << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}

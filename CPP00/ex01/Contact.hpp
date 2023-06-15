@@ -6,12 +6,12 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:43:01 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/14 18:57:53 by vegret           ###   ########.fr       */
+/*   Updated: 2023/06/15 18:10:23 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_H
-# define CONTACT_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 # include <string>
 
 class Contact

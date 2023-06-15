@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 15:16:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 18:10:29 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/15 17:22:37 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/15 18:17:54 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# define CAPACITY 8
-# include "Contact.hpp"
-# include <iostream>
+#include <string>
+#include "Weapon.hpp"
 
-class PhoneBook
+Weapon::Weapon() : type("Undefined") {}
+
+Weapon::Weapon(std::string type) : type(type) {}
+
+Weapon::~Weapon() {}
+
+const std::string& Weapon::getType()
 {
-	private:
-		int	placeIndex;
-		int	nbContacts;
-		Contact contacts[CAPACITY];
-	public:
-		PhoneBook();
-		~PhoneBook();
-		void add(std::string *infos);
-		void displayContacts();
-		void displayContact(int i);
-		int getNbContacts();
-};
+	return this->type;
+}
 
-#endif
+void Weapon::setType(std::string type)
+{
+	this->type = type;
+}
