@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:22:18 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 19:22:12 by vegret           ###   ########.fr       */
+/*   Updated: 2023/06/16 17:34:30 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ std::string replace(std::string& str, const std::string& target, const std::stri
 	std::string::size_type pos = 0;
 	std::string::size_type prevPos = 0;
 
-	while ((pos = str.find(target, pos)) != std::string::npos)
+	pos = str.find(target, pos);
+	while (pos != std::string::npos)
 	{
 		result.append(str, prevPos, pos - prevPos);  // Copie la partie non affectée par le remplacement
 		result.append(replacement);  // Ajoute la chaîne de remplacement
 		pos += target.length();  // Passe à la prochaine occurrence de target
 		prevPos = pos;  // Mémorise la position actuelle pour la prochaine itération
+		pos = str.find(target, pos);
 	}
 
 	if (prevPos < str.length())
