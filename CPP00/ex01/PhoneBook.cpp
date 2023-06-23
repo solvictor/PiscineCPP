@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:18:47 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 18:20:53 by vegret           ###   ########.fr       */
+/*   Updated: 2023/06/23 15:04:14 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void PhoneBook::displayContacts()
 	std::cout << "──────────┼──────────┼──────────┼──────────" << std::endl;
 
 	for (int i = 0; i < this->nbContacts; i++)
-	{	
+	{
 		std::cout.width(10);
 		std::cout << std::right << i + 1 << '|';
 		std::cout.width(10);
