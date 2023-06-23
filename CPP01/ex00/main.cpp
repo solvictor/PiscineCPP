@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 16:00:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 16:24:58 by vegret           ###   ########.fr       */
+/*   Updated: 2023/06/23 18:26:52 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main()
 		return 1;
 
 	heap->announce();
+	
+	delete heap;
 
 	return 0;
 }
