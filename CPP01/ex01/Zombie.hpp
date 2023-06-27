@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 15:59:45 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/15 18:10:04 by vegret           ###   ########.fr       */
+/*   Updated: 2023/06/27 13:18:56 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Zombie
 		Zombie(std::string nom);
 		~Zombie();
 		void announce(void);
+		void setName(std::string name);
 };
 
 #endif
