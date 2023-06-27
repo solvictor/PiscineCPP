@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/19 17:33:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/27 14:46:02 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/19 17:29:06 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/27 14:52:51 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+int main()
 {
-	std::cout << "Dog was Created" << std::endl;
-}
-
-Dog::Dog(const Dog &source) : Animal(source.type)
-{
-	std::cout << "Dog was Created" << std::endl;
-}
-
-Dog::~Dog()
-{
-	std::cout << "Dog was Destroyed" << std::endl;
-}
-
-Dog &Dog::operator=(const Dog &source)
-{
-	this->type = source.type;
-	return *this;
-}
-
-void Dog::makeSound() const
-{
-	std::cout << "bark" << std::endl;
+	Animal tab[10];
+	
+	for (int i = 0 ; i < 10 ; i++)
+	{
+		if (i < 5)
+			tab[i] = Dog();
+		else
+			tab[i] = Cat();
+	}
+	// TODO Finir
+	return 0;
 }

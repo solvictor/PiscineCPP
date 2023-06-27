@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:49:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/19 17:55:05 by vegret           ###   ########.fr       */
+/*   Updated: 2023/06/27 14:45:57 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cat::~Cat()
 Cat &Cat::operator=(const Cat &source)
 {
 	this->type = source.type;
-	return (*this);
+	return *this;
 }
 
 void Cat::makeSound(void) const

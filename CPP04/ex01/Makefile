@@ -28,7 +28,7 @@ WHITE		=	\033[0;97m
 
 # Sources
 
-SRC_FILES	=	main Animal Cat Dog WrongAnimal WrongCat
+SRC_FILES	=	main Animal Cat Dog WrongAnimal WrongCat Brain
 
 
 SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))

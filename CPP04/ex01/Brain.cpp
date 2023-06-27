@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/19 17:33:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/27 14:46:02 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/27 14:05:19 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/27 14:50:07 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Dog.hpp"
+#include "Brain.hpp"
 
-Dog::Dog() : Animal("Dog")
+Brain::Brain()
 {
-	std::cout << "Dog was Created" << std::endl;
+	std::cout << "Brain was created" << std::endl;
 }
 
-Dog::Dog(const Dog &source) : Animal(source.type)
+Brain::Brain(const Brain &source)
 {
-	std::cout << "Dog was Created" << std::endl;
+	*this = source;
 }
 
-Dog::~Dog()
+Brain::~Brain()
 {
-	std::cout << "Dog was Destroyed" << std::endl;
+	std::cout << "Brain was destroyed" << std::endl;
 }
 
-Dog &Dog::operator=(const Dog &source)
+Brain &Brain::operator=(const Brain &source)
 {
-	this->type = source.type;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = source.ideas[i];
+
 	return *this;
-}
-
-void Dog::makeSound() const
-{
-	std::cout << "bark" << std::endl;
 }
