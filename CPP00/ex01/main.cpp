@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:21:05 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/23 15:10:43 by vegret           ###   ########.fr       */
+/*   Updated: 2023/07/19 15:58:04 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int	main(void)
 			}
 		}
 	}
-	while (command != "EXIT" && !std::cin.eof() && !command.empty());
+	while (command != "EXIT" && !std::cin.eof());
 	return 0;
 }
