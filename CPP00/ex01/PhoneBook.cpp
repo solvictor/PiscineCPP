@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 15:18:47 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/23 15:04:14 by vegret           ###   ########.fr       */
+/*   Updated: 2023/07/18 17:15:04 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ std::string formatInfo(const std::string& info, size_t width)
 		return info.substr(0, width - 1) + '.';
 	return info;
 }
-
 
 void PhoneBook::displayContacts()
 {

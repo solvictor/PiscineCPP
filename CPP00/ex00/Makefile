@@ -4,7 +4,7 @@ NAME		= megaphone
 INCLUDE		= .
 SRC_DIR		= ./
 OBJ_DIR		= objects/
-CC			= c++
+CC			= clang++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -f
 SMAKE		= make --no-print-directory
