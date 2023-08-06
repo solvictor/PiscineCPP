@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 21:40:46 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/18 23:36:41 by vegret           ###   ########.fr       */
+/*   Updated: 2023/08/06 17:57:50 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Point::~Point() {}
 
 Point &Point::operator=(const Point &source)
 {
-	(void) source; // Check
+	(void) source;
 	return *this;
 }
 
