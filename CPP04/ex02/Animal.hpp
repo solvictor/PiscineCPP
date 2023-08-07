@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:31:24 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 00:08:37 by vegret           ###   ########.fr       */
+/*   Updated: 2023/07/05 00:16:10 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
 		Animal(std::string type);
 		virtual ~Animal();
 		Animal &operator=(const Animal &source);
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 		std::string getType() const;
 };
 

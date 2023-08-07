@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/19 17:31:24 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 00:08:37 by vegret           ###   ########.fr       */
+/*   Created: 2023/06/27 14:05:19 by vegret            #+#    #+#             */
+/*   Updated: 2023/06/27 14:50:07 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
-# include <string>
+#include <iostream>
+#include "Brain.hpp"
 
-class Animal
+Brain::Brain()
 {
-	protected:
-		std::string	type;
-	public:
-		Animal();
-		Animal(const Animal &source);
-		Animal(std::string type);
-		virtual ~Animal();
-		Animal &operator=(const Animal &source);
-		virtual void makeSound() const;
-		std::string getType() const;
-};
+	std::cout << "Brain was created" << std::endl;
+}
 
-#endif
+Brain::Brain(const Brain &source)
+{
+	*this = source;
+}
+
+Brain::~Brain()
+{
+	std::cout << "Brain was destroyed" << std::endl;
+}
+
+Brain &Brain::operator=(const Brain &source)
+{
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = source.ideas[i];
+
+	return *this;
+}

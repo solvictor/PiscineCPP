@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:29:06 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/28 14:56:18 by vegret           ###   ########.fr       */
+/*   Updated: 2023/07/05 00:17:55 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,27 @@
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#define NB_ANIMALS 10
 
 int main()
 {
-	Animal *tab[NB_ANIMALS];
+	//Animal *animal = new Animal();
+	Animal *dog = new Dog();
+	Animal *cat = new Cat();
+
+	std::cout << std::endl;
+
+	//std::cout << animal->getType() << " " << std::endl;
+	//animal->makeSound();
+	std::cout << dog->getType() << " " << std::endl;
+	dog->makeSound();
+	std::cout << cat->getType() << " " << std::endl;
+	cat->makeSound();
 	
-	for (int i = 0 ; i < NB_ANIMALS ; i++)
-	{
-		if (i < NB_ANIMALS / 2)
-			tab[i] = new Dog();
-		else
-			tab[i] = new Cat();
-	}
+	std::cout << std::endl;
 
-	for (int i = 0 ; i < NB_ANIMALS ; i++)
-		std::cout << "Animal " << i << " type: " << tab[i]->getType() << std::endl;
-
-	for (int i = 0 ; i < NB_ANIMALS ; i++)
-		delete tab[i];
+	//delete animal;
+	delete dog;
+	delete cat;
 
 	return 0;
 }

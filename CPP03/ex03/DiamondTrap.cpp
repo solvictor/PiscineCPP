@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:25:29 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/19 17:11:20 by vegret           ###   ########.fr       */
+/*   Updated: 2023/07/05 01:13:33 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	this->energy = ScavTrap::energy;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &source)
+DiamondTrap::DiamondTrap(const DiamondTrap &source) : ClapTrap(source), ScavTrap(), FragTrap()
 {
 	std::cout << "DiamondTrap copy constructor call" << std::endl;
 	*this = source;
