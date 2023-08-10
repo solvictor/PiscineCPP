@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:55:13 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 16:56:21 by vegret           ###   ########.fr       */
+/*   Updated: 2023/08/10 18:01:06 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ Cure::Cure(const Cure &source)
 
 Cure &Cure::operator=(const Cure &source)
 {
-	if (this == &source)
-		return (*this);
-	this->type = source.type;
 	return (*this);
 }
 
