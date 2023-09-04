@@ -28,7 +28,7 @@ WHITE		=	\033[0;97m
 
 # Sources
 
-SRC_FILES	=	main AMateria Character Ice Cure
+SRC_FILES	=	main AMateria Character Ice Cure MateriaSource
 
 
 SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(SRC_FILES)))

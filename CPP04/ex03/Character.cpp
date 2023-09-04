@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:47:24 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 17:34:19 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 17:29:36 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,13 @@ void Character::equip(AMateria *m)
 	if (m == NULL)
 	{
 		std::cout << "Invalid materia!" << std::endl;
-		return ;
+		return;
 	}
 	if (count_items() == INVENTORY_SIZE)
 	{
 		std::cout << "Inventory is already full! Can't equip " << m->getType() << "!" << std::endl;
 		push_trash(-1, m);
-		return ;
+		return;
 	}
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
@@ -101,7 +101,7 @@ void Character::equip(AMateria *m)
 		if (this->inventory[i] == m)
 		{
 			std::cout << "Item " << m->getType() <<" is already equiped!" << std::endl;
-			return ;
+			return;
 		}	
 	}
 	this->inventory[first_free] = m;
@@ -111,7 +111,7 @@ void Character::equip(AMateria *m)
 void Character::unequip(int i) 
 {
 	if (check_slot(i) == false)
-		return ;
+		return;
 	std::cout << "Unequiped " << this->inventory[i]->getType()
 			<< ", previously stored in slot " << i << std::endl;
 	push_trash(i, this->inventory[i]);
@@ -120,12 +120,12 @@ void Character::unequip(int i)
 void Character::use(int i, ICharacter &target)
 {
 	if (check_slot(i) == false)
-		return ;
+		return;
 	if (this->inventory[i] == NULL)
 	{
 		std::cout << "The slot " << i << " is empty! " << this->name
 			<< " can't do anything!" << std::endl;
-		return ;
+		return;
 	}
 	std::cout << "Using " << this->inventory[i]->getType()
 		<< " stored in slot " << i << "!" << std::endl;
