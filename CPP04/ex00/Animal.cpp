@@ -6,14 +6,14 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:41:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/27 14:45:53 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:29:57 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() : type("Unknown")
 {
 	std::cout << "Animal was created" << std::endl;
 }

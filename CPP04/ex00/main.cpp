@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:29:06 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/19 18:57:36 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:39:25 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,34 @@
 
 int main()
 {
-	const WrongAnimal* wrongCat = new WrongCat();
-	const WrongAnimal* meta2 = new WrongAnimal();
 	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-	
-	std::cout << cat->getType() << " " << std::endl;
-	std::cout << dog->getType() << " " << std::endl;
-	std::cout << wrongCat->getType() << " " << std::endl << std::endl;;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	dog->makeSound();
-	cat->makeSound();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+
+	i->makeSound(); // will output the cat sound!
+	j->makeSound();
 	meta->makeSound();
-	wrongCat->makeSound();
-	meta2->makeSound();
 
-	delete wrongCat;
-	delete meta2;
 	delete meta;
-	delete dog;
-	delete cat;
+	delete j;
+	delete i;
+
+	std::cout << std::endl << "Wrong Part" << std::endl << std::endl ;
+
+	// Wrong implementation
+	const WrongAnimal* bad = new WrongAnimal();
+	const WrongAnimal* anicat = new WrongCat();
+
+	std::cout << anicat->getType() << " " << std::endl;
+
+	anicat->makeSound(); // will output the animal sound!
+	bad->makeSound();
+
+	delete bad;
+	delete anicat;
 
 	return 0;
 }

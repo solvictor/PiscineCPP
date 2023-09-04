@@ -6,14 +6,14 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 18:59:07 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/27 14:46:11 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:30:12 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal() : type("Unknown")
 {
 	std::cout << "WrongAnimal was created" << std::endl;
 }

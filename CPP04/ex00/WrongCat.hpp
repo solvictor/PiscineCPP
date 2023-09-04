@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 14:05:31 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/27 14:05:31 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 15:40:24 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ class WrongCat : public WrongAnimal
 		~WrongCat();
 		WrongCat &operator=(const WrongCat &source);
 		void makeSound() const;
-
-	private:
-
 };
 
 #endif
