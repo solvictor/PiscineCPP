@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:49:44 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/27 14:07:36 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:03:43 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal
 		Cat(const Cat &source);
 		~Cat();
 		Cat &operator=(const Cat &source);
-		virtual void makeSound() const;
+		void makeSound() const;
 
 	private:
 		Brain *brain;

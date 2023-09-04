@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:49:28 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/28 14:04:33 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:27:41 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Cat::Cat() : Animal("Cat")
 
 Cat::Cat(const Cat &source) : Animal(source.type)
 {
+	*this = source;
 	std::cout << "Cat was created" << std::endl;
 }
 
@@ -33,7 +34,8 @@ Cat::~Cat()
 Cat &Cat::operator=(const Cat &source)
 {
 	this->type = source.type;
-	*this->brain = *source.brain;
+	delete this->brain;
+	this->brain = new Brain(*source.brain);
 	return *this;
 }
 
