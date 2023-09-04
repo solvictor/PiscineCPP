@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 17:33:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/06/28 14:04:39 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:27:32 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Dog::Dog() : Animal("Dog")
 
 Dog::Dog(const Dog &source) : Animal(source.type)
 {
+	*this = source;
 	std::cout << "Dog was Created" << std::endl;
 }
 
@@ -33,7 +34,8 @@ Dog::~Dog()
 Dog &Dog::operator=(const Dog &source)
 {
 	this->type = source.type;
-	*this->brain = *source.brain;
+	delete this->brain;
+	this->brain = new Brain(*source.brain);
 	return *this;
 }
 
