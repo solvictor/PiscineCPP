@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:59:09 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 17:01:17 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/12 16:28:02 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class MateriaSource : public IMateriaSource
 		~MateriaSource();
 		MateriaSource &operator=(const MateriaSource &source);
 		void learnMateria(AMateria* m);
-		bool is_in_materias(const std::string &type);
  		AMateria *createMateria(std::string const &type);
 		void display_materias();
 };

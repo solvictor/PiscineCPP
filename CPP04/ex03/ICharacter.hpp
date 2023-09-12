@@ -6,14 +6,15 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:44:19 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 15:07:25 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/12 14:32:22 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
-# include "AMateria.hpp"
 # include <string>
+
+class AMateria;
 
 class ICharacter
 {

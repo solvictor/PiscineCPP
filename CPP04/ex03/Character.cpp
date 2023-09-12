@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:47:24 by vegret            #+#    #+#             */
-/*   Updated: 2023/09/04 17:29:36 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/12 14:53:59 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ Character::Character()
 
 Character::Character(const Character &source)
 {
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+		this->inventory[i] = NULL;
 	*this = source;
 }
 
@@ -38,7 +40,7 @@ Character &Character::operator=(const Character &source)
 			delete this->inventory[i];
 			this->inventory[i] = NULL;
 		}
-		if (source.inventory[i] != NULL)
+		if (source.inventory[i])
 			this->inventory[i] = source.inventory[i]->clone();
 		else
 			this->inventory[i] = NULL;
@@ -88,12 +90,6 @@ void Character::equip(AMateria *m)
 		std::cout << "Invalid materia!" << std::endl;
 		return;
 	}
-	if (count_items() == INVENTORY_SIZE)
-	{
-		std::cout << "Inventory is already full! Can't equip " << m->getType() << "!" << std::endl;
-		push_trash(-1, m);
-		return;
-	}
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
 		if (this->inventory[i] == NULL && first_free == -1)
@@ -103,6 +99,12 @@ void Character::equip(AMateria *m)
 			std::cout << "Item " << m->getType() <<" is already equiped!" << std::endl;
 			return;
 		}	
+	}
+	if (first_free == -1)
+	{
+		std::cout << "Inventory is already full! Can't equip " << m->getType() << "!" << std::endl;
+		push_trash(-1, m);
+		return;
 	}
 	this->inventory[first_free] = m;
 	std::cout << "Equiped " << m->getType() << " in slot " << first_free << std::endl;
@@ -121,12 +123,6 @@ void Character::use(int i, ICharacter &target)
 {
 	if (check_slot(i) == false)
 		return;
-	if (this->inventory[i] == NULL)
-	{
-		std::cout << "The slot " << i << " is empty! " << this->name
-			<< " can't do anything!" << std::endl;
-		return;
-	}
 	std::cout << "Using " << this->inventory[i]->getType()
 		<< " stored in slot " << i << "!" << std::endl;
 	this->inventory[i]->use(target);
@@ -163,7 +159,7 @@ void Character::push_trash(int i, AMateria *to_trash)
 	
 	tmp_trash = this->trash;
 	this->trash = to_trash;
-	if (to_trash) //Impossible but protection is good 
+	if (to_trash)
 		to_trash->_next = tmp_trash;
 	if (i != -1)
 		this->inventory[i] = NULL;

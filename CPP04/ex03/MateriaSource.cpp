@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:59:06 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 17:10:57 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/12 16:34:28 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,6 @@ MateriaSource::~MateriaSource()
 	}
 }
 
-/*
-	"They are not necessarily unique." --> materias can have 2 cures, 2 ices...
-	but the Materias need to be distinct instances.
-	Thus, materias will never contains twice the same memory address (pointer
-	to a given instance).
-*/
 void MateriaSource::learnMateria(AMateria* m)
 {
 	int items = 0;
@@ -70,7 +64,7 @@ void MateriaSource::learnMateria(AMateria* m)
 	}
 	while (this->materias[items] != NULL && items < MATERIAS_SIZE)
 	{
-		if (this->materias[items] == m)
+		if (this->materias[items] == m) // If same instance
 		{
 			std::cout << "Already have the EXACT same Materia in Materias!" << std::endl;
 			return ;
@@ -86,28 +80,16 @@ void MateriaSource::learnMateria(AMateria* m)
 	delete m;
 }
 
-bool	MateriaSource::is_in_materias(const std::string &type)
-{
-	for (int i = 0; i < MATERIAS_SIZE; i++)
-	{
-		if (this->materias[i] && this->materias[i]->getType() == type)
-			return (true);
-	}
-	return (false);
-}
-
 AMateria* MateriaSource::createMateria(std::string const &type)
 {
 	int i;
-	
-	if (!this->is_in_materias(type))
-		return (NULL);
-	for (i = 0; i < MATERIAS_SIZE; i++)
+
+	for (i = MATERIAS_SIZE - 1; i >= 0; i--)
 	{
 		if (this->materias[i] && this->materias[i]->getType() == type)
-			break;
+			return (this->materias[i]->clone());
 	}
-	return (this->materias[i]->clone());
+	return (NULL);
 }
 
 void MateriaSource::display_materias()

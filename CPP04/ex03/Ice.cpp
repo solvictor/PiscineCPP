@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 15:56:17 by vegret            #+#    #+#             */
-/*   Updated: 2023/08/10 18:01:02 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/12 14:57:25 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ Ice::Ice(const Ice &source)
 
 Ice &Ice::operator=(const Ice &source)
 {
+	this->type = source.type;
 	return (*this);
 }
 
