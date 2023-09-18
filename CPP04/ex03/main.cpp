@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 01:15:56 by vegret            #+#    #+#             */
-/*   Updated: 2023/09/12 15:49:32 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/18 15:02:06 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,11 +120,16 @@ int main()
 	
 	materia_source_2 = materia_source_1;
 	materia_source_2.display_materias();
+
+	delete cure_mat_source;
 	
 	std::cout << "----------------------SUBJECT TEST----------------------" << std::endl;
 	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	Ice *learn1 = new Ice();
+	Cure *learn2 = new Cure();
+	
+	src->learnMateria(learn1);
+	src->learnMateria(learn2);
 
 	ICharacter* me = new Character("me");
 
@@ -142,6 +147,8 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
-
+	delete learn1;
+	delete learn2;
+	
 	return 0;
 }

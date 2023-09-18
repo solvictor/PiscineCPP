@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:47:20 by vegret            #+#    #+#             */
-/*   Updated: 2023/07/05 17:23:49 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/18 14:38:48 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Character : public ICharacter
 		int count_items();
 	public:
 		Character();
+		Character(std::string name);
 		Character(const Character &source);
-		Character(std::string anme);
 		~Character();
 		Character &operator=(const Character &source);
 		std::string const &getName() const;

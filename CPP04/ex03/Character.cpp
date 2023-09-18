@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:47:24 by vegret            #+#    #+#             */
-/*   Updated: 2023/09/12 14:53:59 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/18 14:46:01 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 Character::Character()
 {
 	this->name = "default";
+	for (int i = 0; i < INVENTORY_SIZE; i++)
+		this->inventory[i] = NULL;
+	this->trash = NULL;
+}
+
+Character::Character(std::string name)
+{
+	this->name = name;
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 		this->inventory[i] = NULL;
 	this->trash = NULL;
@@ -42,8 +50,6 @@ Character &Character::operator=(const Character &source)
 		}
 		if (source.inventory[i])
 			this->inventory[i] = source.inventory[i]->clone();
-		else
-			this->inventory[i] = NULL;
 	}
 	this->trash = NULL;
 	return (*this);
@@ -55,25 +61,17 @@ Character::~Character()
 
 	for (int i = 0; i < INVENTORY_SIZE; i++)
 	{
-		if (this->inventory[i] != NULL)
+		if (this->inventory[i])
 			delete inventory[i];
 	}
 	
-	while (this->trash != NULL)
+	while (this->trash)
 	{
 		tmp_trash = this->trash;
 		trash = trash->_next;
 		if (tmp_trash)
 			delete tmp_trash;
 	}
-}
-
-Character::Character(std::string name)
-{
-	this->name = name;
-	for (int i = 0; i < INVENTORY_SIZE; i++)
-		this->inventory[i] = NULL;
-	this->trash = NULL;
 }
 
 const std::string &Character::getName() const
@@ -126,7 +124,6 @@ void Character::use(int i, ICharacter &target)
 	std::cout << "Using " << this->inventory[i]->getType()
 		<< " stored in slot " << i << "!" << std::endl;
 	this->inventory[i]->use(target);
-	push_trash(i, this->inventory[i]);
 }
 
 bool Character::check_slot(int i)

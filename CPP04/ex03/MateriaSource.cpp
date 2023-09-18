@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 16:59:06 by vegret            #+#    #+#             */
-/*   Updated: 2023/09/12 16:34:28 by vegret           ###   ########.fr       */
+/*   Updated: 2023/09/18 14:53:30 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void MateriaSource::learnMateria(AMateria* m)
 		std::cout << "Bad Materia!" << std::endl;
 		return ;
 	}
-	while (this->materias[items] != NULL && items < MATERIAS_SIZE)
+	while (this->materias[items] && items < MATERIAS_SIZE)
 	{
 		if (this->materias[items] == m) // If same instance
 		{
@@ -77,7 +77,6 @@ void MateriaSource::learnMateria(AMateria* m)
 		return ;
 	}
 	this->materias[items] = m->clone();
-	delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const &type)
