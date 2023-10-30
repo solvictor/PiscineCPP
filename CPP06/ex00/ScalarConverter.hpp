@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 13:34:06 by vegret            #+#    #+#             */
-/*   Updated: 2023/10/25 21:29:38 by vegret           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:49:32 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ typedef struct s_num {
 
 class ScalarConverter
 {
-	public:
+	private:
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &source);
-		~ScalarConverter();
 		ScalarConverter &operator=(const ScalarConverter &source);
+
+	public:
+		~ScalarConverter();
 
 		static void convert(const std::string input);
 };

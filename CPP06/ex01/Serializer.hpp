@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 22:55:20 by vegret            #+#    #+#             */
-/*   Updated: 2023/10/26 22:58:24 by vegret           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:50:53 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@
 struct Data
 {
 	std::string	name;
-	int			age;
+	int age;
 };
 
 class Serializer
 {
-	public:
+	private:
 		Serializer();
 		Serializer(const Serializer &source);
-		~Serializer();
 		Serializer &operator=(const Serializer &source);
+
+	public:
+		~Serializer();
 
 		static uintptr_t serialize(Data* ptr);
 		static Data* deserialize(uintptr_t raw);
