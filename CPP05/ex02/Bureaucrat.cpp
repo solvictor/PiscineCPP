@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:37:24 by vegret            #+#    #+#             */
-/*   Updated: 2023/10/24 17:59:18 by vegret           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:22:53 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void Bureaucrat::signForm(AForm& form) {
 	try
 	{
 		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << "." << std::endl;
 	}
 	catch (const AForm::GradeTooLowException& e)
 	{

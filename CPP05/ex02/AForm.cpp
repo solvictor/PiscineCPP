@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:46:22 by vegret            #+#    #+#             */
-/*   Updated: 2023/10/25 00:15:19 by vegret           ###   ########.fr       */
+/*   Updated: 2023/10/30 16:22:47 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void AForm::beSigned(const Bureaucrat& bureaucrat) {
 		std::cout << bureaucrat.getName() << " couldn't sign " << _name
 				  << " because it is already signed." << std::endl;
 	else {
-		std::cout << bureaucrat.getName() << " signed " << _name << "." << std::endl;
 		_isSigned = true;
 	}
 }
