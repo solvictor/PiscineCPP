@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 01:48:04 by vegret            #+#    #+#             */
-/*   Updated: 2023/10/27 01:56:02 by vegret           ###   ########.fr       */
+/*   Updated: 2023/10/31 01:32:42 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void iter(T* array, size_t length, F fun) {
 }
 
 template <typename T>
-void print(T val) {
+void printer(T val) {
 	std::cout << val << " ";
 }
 
