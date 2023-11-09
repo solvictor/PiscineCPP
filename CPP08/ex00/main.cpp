@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:33:46 by vegret            #+#    #+#             */
-/*   Updated: 2023/10/27 19:27:21 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/08 18:34:13 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 #include <list>
 #include "easyfind.hpp"
 
+template <typename T>
+void	display_container(const T& container)
+{
+	size_t i = 0;
+	typename T::const_iterator it = container.begin();
+
+	while (it != container.end())
+		std::cout << i++ << ": " << *it++ << std::endl;
+}
+
 int main()
 {
 	std::vector<int>	vector;
@@ -24,8 +34,8 @@ int main()
 	std::srand(time(NULL));
 	
 	for (int i = 0; i < 10; i++) {
-		vector.push_back(std::rand() % 15);
-		list.push_back(std::rand() % 15);
+		vector.push_back(std::rand() % 10);
+		list.push_back(std::rand() % 10);
 	}
 
 	std::cout << "Vector content:" << std::endl;
