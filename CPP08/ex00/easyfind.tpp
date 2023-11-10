@@ -6,13 +6,13 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:35:21 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/10 15:58:19 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/10 16:12:06 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_TPP
 # define EASYFIND_TPP
-# include <algorithm>
+# include <iterator>
 
 template <class T>
 typename T::iterator easyfind(T& container, int value)

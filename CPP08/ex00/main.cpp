@@ -6,14 +6,14 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:33:46 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/10 16:00:37 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/10 16:12:21 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <vector>
-#include <map>
 #include <list>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 #include "easyfind.hpp"
 
 template <typename T>
