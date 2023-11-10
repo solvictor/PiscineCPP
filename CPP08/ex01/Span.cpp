@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:41:27 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/10 16:11:11 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/10 17:41:18 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,7 @@ int Span::longestSpan() {
 std::multiset<int>::iterator Span::begin() { return _data.begin(); }
 
 std::multiset<int>::iterator Span::end() { return _data.end(); }
+
+const char *Span::SpanFullException::what() const throw() { return "Span is full! Can't add an extra number"; }
+
+const char *Span::SpanEmptyException::what() const throw() { return "Span doesn't contain enough elements to calculate a...span."; }

@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:39:52 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/09 17:52:32 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/10 17:41:27 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,12 @@ class Span {
 	
 	class SpanFullException: public std::exception {
 		public:
-			virtual const char *what() const throw() {
-				return "Span is full! Can't add an extra number";
-			}
+			virtual const char *what() const throw();
 	};
 
 	class SpanEmptyException: public std::exception {
 		public:
-			virtual const char *what() const throw() {
-				return "Span doesn't contain enough elements to calculate a...span.";
-			}
+			virtual const char *what() const throw();
 	};
 };
 
