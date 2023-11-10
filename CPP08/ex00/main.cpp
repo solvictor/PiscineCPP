@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:33:46 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/08 18:34:13 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/10 16:00:37 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	display_container(const T& container)
 
 int main()
 {
-	std::vector<int>	vector;
-	std::list<int>		list;
+	std::vector<int> vector;
+	std::list<int> list;
 
 	std::srand(time(NULL));
 	
@@ -74,5 +74,6 @@ int main()
 	catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	return 0;
 }

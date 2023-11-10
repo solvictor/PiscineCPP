@@ -6,17 +6,17 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:46:00 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/09 18:32:05 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/10 16:00:58 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
-#include <algorithm>
 #include <vector>
-#include <stdexcept>
 #include <iostream>
+#include <stdexcept>
+#include <algorithm>
+#include "Span.hpp"
 
-int main() { // TODO Revoir les tests
+int main() {
 	srand(time(NULL));
 
 	try {
@@ -24,8 +24,10 @@ int main() { // TODO Revoir les tests
 		std::cout << "              Big Span Test               " << std::endl;
 		std::cout << "==========================================" << std::endl;
 		Span span(15000);
+
 		for (unsigned int i = 0; i < span.max_size(); i++)
 			span.addNumber(rand() % 1000000);
+	
 		std::cout << "Longest span: " << span.longestSpan() << std::endl;
 		std::cout << "Shortest span: " << span.shortestSpan() << std::endl;	
 	}
@@ -62,6 +64,7 @@ int main() { // TODO Revoir les tests
 	std::cout << "==========================================" << std::endl;
 	std::cout << "               Subject test               " << std::endl;
 	std::cout << "==========================================" << std::endl;
+
 	Span sp = Span(5);
 	sp.addNumber(6);
 	sp.addNumber(3);
@@ -70,4 +73,6 @@ int main() { // TODO Revoir les tests
 	sp.addNumber(11);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+
+	return 0;
 }

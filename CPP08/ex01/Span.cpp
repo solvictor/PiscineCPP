@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:41:27 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/09 18:12:47 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/10 15:58:12 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Span::Span(const Span &source) : _data(source._data), _max_size(source._max_size
 Span& Span::operator=(const Span &source) {
 	if (this == &source)
 		return *this;
+
 	_max_size = source._max_size;
 	_data = source._data;
 	return *this;
@@ -47,6 +48,7 @@ int Span::shortestSpan() {
 	std::multiset<int>::const_iterator it = _data.begin();
 	int previous = *it++;
 	unsigned int min_span = *it - previous;
+
 	while (it != _data.end()) {
 		unsigned int span = *it - previous;
 		if (span < min_span)
