@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:48:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/14 17:36:30 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/15 17:10:15 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ int main(int argc, char **argv) {
 	try {
 		Exchanger exchanger;
 
-		std::map<std::string, float> data = exchanger.parse_data("data.csv");
+		std::map<std::string, float> data = exchanger.parse_data((char*) "data.csv");
 		
-		exchanger.display_data(data, argv[1]);
+		exchanger.display_data(data, (char*) argv[1]);
 		
 
-	} catch (const std::exception& e) {
+	}
+	catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
 		return 1;
 	}
