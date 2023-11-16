@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:48:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/15 17:10:15 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/16 12:38:28 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ int main(int argc, char **argv) {
 	try {
 		Exchanger exchanger;
 
-		std::map<std::string, float> data = exchanger.parse_data((char*) "data.csv");
-		
-		exchanger.display_data(data, (char*) argv[1]);
-		
+		exchanger.load_data(const_cast<char*>("data.csv"));
 
+		exchanger.display_data(static_cast<char*>(argv[1]));
 	}
 	catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;
