@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:49:01 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 13:24:38 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/16 15:11:45 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ Exchanger& Exchanger::operator=(const Exchanger& source) {
 	return *this;
 }
 
-static inline bool	is_dir(const char* path)
+static bool	is_dir(const char* path)
 {
 	struct stat buf;
 	stat(path, &buf);
 	return (S_ISDIR(buf.st_mode));
 }
 
-static inline void trim(std::string& str) {
+static void trim(std::string& str) {
 	std::string::iterator it = str.begin();
 
 	while (it != str.end() && std::isspace(*it)) { 
@@ -46,7 +46,7 @@ static inline void trim(std::string& str) {
 	}
 }
 
-static inline bool is_valid(int year, int month, int day) {
+static bool is_valid(int year, int month, int day) {
 	if (year < 1900 || day < 1)
 		return false;
 	switch (month) {
@@ -70,7 +70,7 @@ static inline bool is_valid(int year, int month, int day) {
 	};
 }
 
-static inline std::string parse_date(std::string& line, char sep) {
+static std::string parse_date(std::string& line, char sep) {
 	std::size_t sep_index = line.find(sep);
 
 	if (sep_index == std::string::npos)
@@ -98,7 +98,7 @@ static inline std::string parse_date(std::string& line, char sep) {
 	return date;
 }
 
-static inline float parse_float(std::string& line, char sep, bool is_price) {
+static float parse_float(std::string& line, char sep, bool is_price) {
 	std::size_t sep_index = line.find(sep);
 
 	if (sep_index == std::string::npos)

@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:48:59 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 12:41:13 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/16 15:12:17 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Exchanger {
 		Exchanger();
 		Exchanger(const Exchanger& source);
 		~Exchanger();
-
 		Exchanger& operator=(const Exchanger& source);
 
 		void load_data(char* path);

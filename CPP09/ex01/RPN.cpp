@@ -6,16 +6,26 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:33:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 14:54:57 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/16 15:30:25 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stack>
+#include <limits>
 #include <iostream>
 #include <stdexcept>
 #include "RPN.hpp"
 
 RPN::RPN() {}
+
+RPN::RPN(const RPN &source) { (void) source; }
+
+RPN::~RPN() {}
+
+RPN &RPN::operator=(const RPN &source) {
+	(void) source;
+	return *this;
+}
 
 //static void print_stack(std::stack<int> stack) {
 //	if (!stack.size()) {
@@ -31,48 +41,44 @@ RPN::RPN() {}
 //}
 
 int RPN::evaluate(std::string expr) {
-	std::stack<int> stack;
-	int a, b;
+	std::stack<long long> stack;
+	long long a, b;
 
 	for (size_t i = 0; i < expr.size(); i++) {
 		if (std::isspace(expr[i]))
 			continue;
 
-		if (std::isdigit(expr[i]))
+		if (std::isdigit(expr[i])) {
 			stack.push(expr[i] - '0');
-		else if (stack.size() < 2)
+			continue;
+		}
+
+		if (stack.size() < 2)
 			throw std::runtime_error("Error");
-		else if (expr[i] == '+') {
-			a = stack.top();
-			stack.pop();
-			b = stack.top();
-			stack.pop();
+
+		a = stack.top();
+		stack.pop();
+		b = stack.top();
+		stack.pop();
+		if (expr[i] == '+') {
 			stack.push(a + b);
 		}
 		else if (expr[i] == '-') {
-			a = stack.top();
-			stack.pop();
-			b = stack.top();
-			stack.pop();
 			stack.push(b - a);
 		}
 		else if (expr[i] == '*') {
-			a = stack.top();
-			stack.pop();
-			b = stack.top();
-			stack.pop(); 
 			stack.push(a * b);
 		}
 		else if (expr[i] == '/') {
-			a = stack.top();
 			if (a == 0)
 				throw std::runtime_error("Error");
-			stack.pop();
-			b = stack.top();
-			stack.pop();
 			stack.push(b / a);
 		}
 		else
+			throw std::runtime_error("Error");
+
+		if (stack.top() < std::numeric_limits<int>::min() ||
+			stack.top() > std::numeric_limits<int>::max())
 			throw std::runtime_error("Error");
 	}
 

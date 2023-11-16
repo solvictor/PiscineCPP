@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 13:33:37 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 15:27:48 by vegret           ###   ########.fr       */
+/*   Created: 2023/11/16 15:03:21 by vegret            #+#    #+#             */
+/*   Updated: 2023/11/16 15:12:50 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
-# define RPN_HPP
-# include <string>
+#include "PmergeMe.hpp"
 
-class RPN
-{
-	public:
-		RPN();
-		RPN(const RPN &source);
-		~RPN();
-		RPN &operator=(const RPN &source);
-		static int evaluate(std::string expr);
-};
+int main(int argc, char **argv) {
 
-#endif
+	return 0;
+}
