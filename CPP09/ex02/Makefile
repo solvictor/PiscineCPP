@@ -1,6 +1,6 @@
 NAME = PmergeMe
 PATH_OBJS = objects
-CXX = c++ -Wall -Wextra -Werror -std=c++98
+CXX = c++ -Wall -Wextra -Werror -std=c++98 -g3
 SRCS = main.cpp PmergeMe.cpp
 HEADERS = PmergeMe.hpp
 OBJS = ${patsubst %.cpp, ${PATH_OBJS}/%.o, ${SRCS}}

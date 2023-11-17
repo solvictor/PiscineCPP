@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:33:37 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 15:27:48 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/16 18:43:58 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define RPN_HPP
 # include <string>
 
-class RPN
-{
+class RPN {
 	public:
 		RPN();
 		RPN(const RPN &source);
