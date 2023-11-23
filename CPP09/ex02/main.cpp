@@ -6,20 +6,23 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:03:21 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/17 01:03:25 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/20 18:04:00 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <deque>
 #include <vector>
 #include <limits>
+#include <string>
 #include <iomanip>
 #include <stdlib.h>
 #include <iostream>
 #include <sys/time.h>
 #include "PmergeMe.hpp"
 
-static size_t get_num(std::string str) {
+typedef unsigned long long u_ll;
+
+static u_int32_t get_num(std::string str) {
 	if (str.size() > 10)
 		throw std::runtime_error("Error: " + str + " is not a valid positive integer");
 
@@ -31,15 +34,15 @@ static size_t get_num(std::string str) {
 		i++;
 	}
 
-	long res = std::atol(str.c_str());
+	u_int64_t res = std::strtoul(str.c_str(), '\0', 10);
 
-	if (res > std::numeric_limits<unsigned long>::max())
+	if (res > std::numeric_limits<u_int32_t>::max())
 		throw std::runtime_error("Error: " + str + " is not a valid positive integer");
 
-	return static_cast<int>(res);
+	return static_cast<u_int32_t>(res);
 }
 
-static unsigned long long current_time_micros() {
+static u_ll current_time_micros() {
 	struct timeval tv;
 
 	gettimeofday(&tv, NULL);
@@ -53,12 +56,12 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	std::deque<int> deque;
-	std::vector<int> vector;
+	std::deque<u_int32_t> deque;
+	std::vector<u_int32_t> vector;
 
 	try {
 		for (int i = 1 ; i < argc ; i++) {
-			int parsed = get_num(argv[i]);
+			u_int32_t parsed = get_num(argv[i]);
 
 			deque.push_back(parsed);
 			vector.push_back(parsed);
@@ -77,13 +80,14 @@ int main(int argc, char **argv) {
 	}
 	std::cout << std::endl;
 
-	unsigned long long start_vector = current_time_micros();
+	u_ll start_vector = current_time_micros();
 	PmergeMe::sort(vector);
-	unsigned long long elapsed_vector = current_time_micros() - start_vector;
+	u_ll elapsed_vector = current_time_micros() - start_vector;
 
-	unsigned long long start_deque = current_time_micros();
-	PmergeMe::sort(deque);
-	unsigned long long elapsed_deque = current_time_micros() - start_deque;
+
+	u_ll start_deque = current_time_micros();
+	//PmergeMe::sort(deque);
+	u_ll elapsed_deque = current_time_micros() - start_deque;
 
 	std::cout << "After (vector): ";
 	for (size_t i = 0; i < vector.size(); i++) {
