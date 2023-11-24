@@ -34,7 +34,7 @@ static u_int32_t get_num(std::string str) {
 		i++;
 	}
 
-	u_int64_t res = std::strtoul(str.c_str(), '\0', 10);
+	u_int64_t res = std::strtoul(str.c_str(), NULL, 10);
 
 	if (res > std::numeric_limits<u_int32_t>::max())
 		throw std::runtime_error("Error: " + str + " is not a valid positive integer");
