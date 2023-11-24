@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 15:03:21 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/20 18:04:00 by vegret           ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   main.cpp										   :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: vegret <victor.egret.pro@gmail.com>		+#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2023/11/16 15:03:21 by vegret			#+#	#+#			 */
+/*   Updated: 2023/11/23 19:02:51 by vegret		   ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include <deque>
@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	std::cout << "Before: ";
+	std::cout << "Before:         ";
 	for (size_t i = 0; i < vector.size(); i++) {
 		if (i)
 			std::cout << " ";
@@ -84,9 +84,8 @@ int main(int argc, char **argv) {
 	PmergeMe::sort(vector);
 	u_ll elapsed_vector = current_time_micros() - start_vector;
 
-
 	u_ll start_deque = current_time_micros();
-	//PmergeMe::sort(deque);
+	PmergeMe::sort(deque);
 	u_ll elapsed_deque = current_time_micros() - start_deque;
 
 	std::cout << "After (vector): ";
