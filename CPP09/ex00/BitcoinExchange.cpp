@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:49:01 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/24 18:16:41 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/27 16:00:18 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,6 @@ static float parse_float(std::string& line, char sep, bool is_price) {
 
 	if (str.size() < 1)
 		throw std::runtime_error("Error: bad input => " + line);
-
-	if (is_price && str.find('.') != std::string::npos && str.find('.') > 4)
-		throw std::runtime_error("Error: too large a number.");
 
 	float f = std::atof(str.c_str());
 
