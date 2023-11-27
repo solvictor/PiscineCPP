@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:49:01 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/27 16:00:18 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:34:56 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 
 Exchanger::Exchanger() {}
 
-Exchanger::Exchanger(const Exchanger& source) { (void) source; }
+Exchanger::Exchanger(const Exchanger& source __attribute__((unused))) {}
 
 Exchanger::~Exchanger() {}
 
-Exchanger& Exchanger::operator=(const Exchanger& source) {
-	(void) source;
+Exchanger& Exchanger::operator=(const Exchanger& source __attribute__((unused))) {
 	return *this;
 }
 

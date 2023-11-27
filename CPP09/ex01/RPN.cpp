@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:33:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 15:30:25 by vegret           ###   ########.fr       */
+/*   Updated: 2023/11/27 18:34:31 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@
 
 RPN::RPN() {}
 
-RPN::RPN(const RPN &source) { (void) source; }
+RPN::RPN(const RPN &source __attribute__((unused))) {}
 
 RPN::~RPN() {}
 
-RPN &RPN::operator=(const RPN &source) {
-	(void) source;
+RPN &RPN::operator=(const RPN &source __attribute__((unused))) {
 	return *this;
 }
 
