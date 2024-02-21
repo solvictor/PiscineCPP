@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:33:43 by vegret            #+#    #+#             */
-/*   Updated: 2024/02/21 02:25:59 by vegret           ###   ########.fr       */
+/*   Updated: 2024/02/21 02:32:33 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,28 +54,22 @@ int RPN::evaluate(std::string expr) {
 		tmp = stack.top();
 		stack.pop();
 
-		switch (expr[i]) {
-			case '+':
-				stack.top() += tmp;
-				break;
-
-			case '-':
-				stack.top() -= tmp;
-				break;
-
-			case '*':
-				stack.top() *= tmp;
-				break;
-
-			case '/':
-				if (tmp == 0)
-					throw std::runtime_error("Error: Division by 0");
-				stack.top() /= tmp;
-				break;
-
-			default:
-				throw std::runtime_error("Error: Invalid character");
+		if (expr[i] == '+') {
+			stack.top() += tmp;
 		}
+		else if (expr[i] == '-') {
+			stack.top() -= tmp;
+		}
+		else if (expr[i] == '*') {
+			stack.top() *= tmp;
+		}
+		else if (expr[i] == '/') {
+			if (tmp == 0)
+				throw std::runtime_error("Error: Division by 0");
+			stack.top() /= tmp;
+		}
+		else
+			throw std::runtime_error("Error: Invalid character");
 
 		if (stack.top() < std::numeric_limits<int>::min() ||
 			stack.top() > std::numeric_limits<int>::max())
