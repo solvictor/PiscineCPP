@@ -6,12 +6,10 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:49:01 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/27 18:34:56 by vegret           ###   ########.fr       */
+/*   Updated: 2024/02/21 15:28:11 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <sys/stat.h>
 #include "BitcoinExchange.hpp"
 
 Exchanger::Exchanger() {}
@@ -24,8 +22,7 @@ Exchanger& Exchanger::operator=(const Exchanger& source __attribute__((unused)))
 	return *this;
 }
 
-static bool	is_dir(const char* path)
-{
+static bool	is_dir(const char* path) {
 	struct stat buf;
 	stat(path, &buf);
 	return (S_ISDIR(buf.st_mode));
@@ -34,12 +31,12 @@ static bool	is_dir(const char* path)
 static void trim(std::string& str) {
 	std::string::iterator it = str.begin();
 
-	while (it != str.end() && std::isspace(*it)) { 
+	while (it != str.end() && isspace(*it)) { 
 		it = str.erase(it); 
 	}
 
 	it = str.end() - 1;
-	while (it != str.begin() && std::isspace(*it)) { 
+	while (it != str.begin() && isspace(*it)) { 
 		it = str.erase(it);
 		it--;
 	}
@@ -87,9 +84,9 @@ static std::string parse_date(std::string& line, char sep) {
 							&& isdigit(date[8]) && isdigit(date[9])))
 		throw std::runtime_error("Error: bad input => " + line);
 
-	int year = std::atoi(date.c_str());
-	int month = std::atoi(date.c_str() + 5);
-	int day = std::atoi(date.c_str() + 8);
+	int year = atoi(date.c_str());
+	int month = atoi(date.c_str() + 5);
+	int day = atoi(date.c_str() + 8);
 
 	if (!is_valid(year, month, day))
 		throw std::runtime_error("Error: bad input => " + line);
@@ -110,7 +107,7 @@ static float parse_float(std::string& line, char sep, bool is_price) {
 	if (str.size() < 1)
 		throw std::runtime_error("Error: bad input => " + line);
 
-	float f = std::atof(str.c_str());
+	float f = atof(str.c_str());
 
 	if (f < 0)
 		throw std::runtime_error("Error: not a positive number.");
@@ -151,12 +148,12 @@ void Exchanger::load_data(char* path) {
 
 	std::string line;
 
-	if (!std::getline(input_data, line) || line != "date,exchange_rate") {
+	if (!getline(input_data, line) || line != "date,exchange_rate") {
 		input_data.close();
 		throw std::runtime_error("Error: bad file format");
 	}
 
-	while (std::getline(input_data, line)) {
+	while (getline(input_data, line)) {
 		try {
 			std::pair<std::string, float> pair;
 
@@ -184,12 +181,12 @@ void Exchanger::display_data(char* path) const {
 
 	std::string line;
 
-	if (!std::getline(input_data, line) || line != "date | value") {
+	if (!getline(input_data, line) || line != "date | value") {
 		input_data.close();
 		throw std::runtime_error("Error: bad file format");
 	}
 	
-	while (std::getline(input_data, line)) {
+	while (getline(input_data, line)) {
 		try {
 			std::string date = parse_date(line, '|');
 			float price = parse_float(line, '|', true);

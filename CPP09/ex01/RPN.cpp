@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:33:43 by vegret            #+#    #+#             */
-/*   Updated: 2024/02/21 02:32:33 by vegret           ###   ########.fr       */
+/*   Updated: 2024/02/21 15:15:36 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 RPN::RPN() {}
 
-RPN::RPN(const RPN &source __attribute__((unused))) {}
+RPN::RPN(const RPN& source __attribute__((unused))) {}
 
 RPN::~RPN() {}
 
-RPN &RPN::operator=(const RPN &source __attribute__((unused))) {
+RPN& RPN::operator=(const RPN& source __attribute__((unused))) {
 	return *this;
 }
 
@@ -40,10 +40,10 @@ int RPN::evaluate(std::string expr) {
 	long tmp;
 
 	for (size_t i = 0; i < expr.size(); i++) {
-		if (std::isspace(expr[i]))
+		if (isspace(expr[i]))
 			continue;
 
-		if (std::isdigit(expr[i])) {
+		if (isdigit(expr[i])) {
 			stack.push(expr[i] - '0');
 			continue;
 		}

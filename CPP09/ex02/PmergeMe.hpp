@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:03:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/27 18:30:55 by vegret           ###   ########.fr       */
+/*   Updated: 2024/02/21 15:32:51 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 
 class PmergeMe {
 	private:
+		PmergeMe();
+		PmergeMe(const PmergeMe& source);
+		PmergeMe& operator=(const PmergeMe& source);
+
 		template <typename T>
 		static void sort_pairs(T& container) {
 			for (size_t i = 0; i < container.size() - 1; i += 2)
@@ -45,10 +49,7 @@ class PmergeMe {
 		}
 
 	public:
-		PmergeMe();
-		PmergeMe(const PmergeMe &source);
 		~PmergeMe();
-		PmergeMe &operator=(const PmergeMe &source);
 
 		template <typename T>
 		static void sort(T& container) {

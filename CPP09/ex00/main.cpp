@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:48:43 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 12:38:28 by vegret           ###   ########.fr       */
+/*   Updated: 2024/02/21 15:29:14 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include "BitcoinExchange.hpp"
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
 
 	if (argc != 2) {
 		std::cout << "Error: could not open file." << std::endl;

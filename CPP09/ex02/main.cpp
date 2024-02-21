@@ -29,7 +29,7 @@ static u_int32_t get_num(std::string str) {
 	size_t i = 0;
 
 	while (i < str.size()) {
-		if (!std::isdigit(str[i]))
+		if (!isdigit(str[i]))
 			throw std::runtime_error("Error: " + str + " is not a valid positive integer");
 		i++;
 	}
@@ -49,7 +49,7 @@ static u_ll current_time_micros() {
 	return tv.tv_sec * 1000000UL + tv.tv_usec;
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char** argv) {
 
 	if (argc == 1) {
 		std::cout << "Usage: ./PmergeMe <space separated numbers>" << std::endl;

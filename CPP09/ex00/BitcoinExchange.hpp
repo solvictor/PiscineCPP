@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 17:48:59 by vegret            #+#    #+#             */
-/*   Updated: 2023/11/16 15:12:17 by vegret           ###   ########.fr       */
+/*   Updated: 2024/02/21 15:24:56 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <string>
 # include <fstream>
 # include <sstream>
+# include <stdlib.h>
 # include <iostream>
+# include <sys/stat.h>
 
 class Exchanger {
 	private:

@@ -6,7 +6,7 @@
 /*   By: vegret <victor.egret.pro@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:33:37 by vegret            #+#    #+#             */
-/*   Updated: 2024/02/21 02:07:59 by vegret           ###   ########.fr       */
+/*   Updated: 2024/02/21 15:15:31 by vegret           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 class RPN {
 	private:
 		RPN();
-		RPN(const RPN &source);
-		RPN &operator=(const RPN &source);
+		RPN(const RPN& source);
+		RPN& operator=(const RPN& source);
 
 	public:
 		~RPN();
